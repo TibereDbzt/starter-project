@@ -1,1 +1,2 @@
-import '../styles/main.sass';
+import './../styles/main.sass';
+import './../assets/medias/favicon.ico';

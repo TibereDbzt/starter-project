@@ -63,7 +63,7 @@ let config = {
       //   }
       // },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|ico)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -125,7 +125,8 @@ let config = {
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
-        filename: 'index.html'
+        filename: 'index.html',
+        favicon: './src/assets/medias/favicon.ico',
       }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({

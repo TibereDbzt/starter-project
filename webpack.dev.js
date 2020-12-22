@@ -48,17 +48,17 @@ let config = {
         test: /\.sass$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/,
-      //   loader: 'url-loader',
-      //   options: {
-      //     limit: 8000,
-      //     name: 'assets/medias/[hash]-[name].[ext]',
-      //     esModule: false
-      //   }
-      // },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /favicon\.ico$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1,
+          name: 'assets/medias/[hash]-[name].[ext]',
+          esModule: false
+        }
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg|ico)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -119,6 +119,7 @@ let config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      favicon: './src/assets/medias/favicon.ico',
       filename: 'index.html'
     }),
   ]
