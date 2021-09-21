@@ -38,6 +38,12 @@ let config = {
         filename: 'scripts/[name].js',
     },
 
+    devServer: {
+        client: {
+            overlay: false
+        }
+    },
+
     module: {
         rules: [{
             test: /\.html$/,
