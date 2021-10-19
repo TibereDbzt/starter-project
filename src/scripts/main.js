@@ -1,18 +1,10 @@
 import '../styles/main.scss';
 
-import Radio from 'components/Radio';
-import Track from 'components/Track';
+import BaseComponent from 'src/scripts/components/BaseComponent';
 
 const init = () => {
     const tracksElement = document.querySelectorAll('[data-track]');
-    const radio = new Radio();
-    tracksElement.forEach(trackElement => {
-        radio.addTrack(
-            new Track(trackElement, trackElement.dataset.trackUrl)
-        );
-    });
+    const component = new BaseComponent(document, {});
 };
 
-window.addEventListener('load', () => {
-    init();
-});
+document.addEventListener('DOMContentLoaded', () => init());
